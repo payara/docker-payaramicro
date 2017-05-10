@@ -12,8 +12,8 @@ RUN   apk update \
  &&   apk add ca-certificates wget \                                                                                                                                                                                                      
  &&   update-ca-certificates  
 
-# Default payara ports to expose
-EXPOSE 4848 8009 8080 8181
+# Default payara ports to expose plus Hazelcast
+EXPOSE 4848 8009 8080 8181 5900
 
 USER payara
 WORKDIR $PAYARA_PATH
