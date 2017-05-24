@@ -4,11 +4,10 @@ ENV PAYARA_PKG https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/P
 ENV PKG_FILE_NAME payara-micro.jar
 ENV PAYARA_PATH /opt/payara
 
-RUN mkdir -p $PAYARA_PATH/deployments
-RUN adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd
-RUN chown -R payara:payara /opt
-
-RUN   apk update \                                                                                                                                                                                                                        
+RUN   mkdir -p $PAYARA_PATH/deployments \
+ &&   adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd \
+ &&   chown -R payara:payara /opt \
+ &&   apk update \                                                                                                                                                                                                                        
  &&   apk add ca-certificates wget \                                                                                                                                                                                                      
  &&   update-ca-certificates  
 
