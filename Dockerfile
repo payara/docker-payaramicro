@@ -8,9 +8,8 @@ RUN mkdir -p $PAYARA_PATH/deployments
 RUN adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd
 RUN chown -R payara:payara /opt
 
-RUN   apk update \                                                                                                                                                                                                                        
- &&   apk add ca-certificates wget \                                                                                                                                                                                                      
- &&   update-ca-certificates  
+RUN   apk --no-cache add ca-certificates wget \
+ &&   update-ca-certificates
 
 # Default payara ports to expose
 EXPOSE 4848 8009 8080 8181
