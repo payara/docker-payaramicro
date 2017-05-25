@@ -19,8 +19,8 @@ ENV DEPLOY_DIR $PAYARA_PATH/deployments
 ENV AUTODEPLOY_DIR $PAYARA_PATH/deployments
 ENV PAYARA_MICRO_JAR=$PAYARA_PATH/$PKG_FILE_NAME
 
-# Default payara ports to expose
-EXPOSE 4848 8009 8080 8181
+# Default payara ports to expose plus Hazelcast
+EXPOSE 4848 8009 8080 8181 5900
 
 USER payara
 WORKDIR $PAYARA_PATH
