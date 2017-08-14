@@ -9,7 +9,7 @@ RUN   apk update \
  adduser -D -h $PAYARA_PATH payara && echo payara:payara | chpasswd && \
  chown -R payara:payara /opt
 
-ENV PAYARA_PKG https://s3-eu-west-1.amazonaws.com/payara.fish/payara-micro-prerelease.jar
+ENV PAYARA_PKG https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=fish.payara.extras&a=payara-micro&v=5.0.0.173-SNAPSHOT&p=jar
 ENV PAYARA_VERSION prerelease
 ENV PKG_FILE_NAME payara-micro.jar
 
