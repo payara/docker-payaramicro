@@ -1,7 +1,7 @@
 FROM azul/zulu-openjdk-alpine:8u212
 
 # Default payara ports to expose
-EXPOSE 4848 9009 8080 8181
+EXPOSE 8080
 
 # Configure environment variables
 ENV PAYARA_HOME=/opt/payara\
