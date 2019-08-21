@@ -17,7 +17,7 @@ USER payara
 WORKDIR ${PAYARA_HOME}
 
 # Default command to run
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-XX:MaxRAMFraction=1", "-jar", "payara-micro.jar"]
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=90.0", "-jar", "payara-micro.jar"]
 CMD ["--deploymentDir", "/opt/payara/deployments"]
 
 # Download specific

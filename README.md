@@ -27,8 +27,8 @@ You need to add your applications to the container and deploy them.
 Most common default open ports that can be exposed outside of the container:
 
  - 8080 - HTTP listener
- - 8181 - HTTPS listener
- - 5900 - Hazelcast cluster communication port
+ - 8443 - HTTPS listener
+ - 6900 - Hazelcast cluster communication port
 
 ## Application deployment
 
@@ -122,6 +122,12 @@ CMD ["--deploymentDir", "/opt/payara/deployments", "--contextroot", "my"]
 ```
 
 Creates a new Docker Image which results in the deployment of the _myapplication.war_ under the root context _/my_.
+
+# Speeding up Boot by disabling the Data Grid
+
+By default the image has the Data Grid enabled and instances of Payara Micro will form a Data Grid if they can see each other over multicast. Typically this will occur on a single host. 
+
+To speed up boot time the Data Grid can be disabled by modifying the CMD to add `--nocluster`
 
 # Details
 
