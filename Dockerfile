@@ -16,13 +16,12 @@ RUN addgroup payara && \
 USER payara
 WORKDIR ${PAYARA_HOME}
 
-# Download specific
-ARG PAYARA_VERSION="5.192"
-ENV PAYARA_VERSION="$PAYARA_VERSION"
-RUN wget --no-verbose -O ${PAYARA_HOME}/payara-micro.jar http://central.maven.org/maven2/fish/payara/extras/payara-micro/${PAYARA_VERSION}/payara-micro-${PAYARA_VERSION}.jar
-
 # Default command to run
 ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-XX:MaxRAMFraction=1", "-jar", "payara-micro.jar"]
 CMD ["--deploymentDir", "/opt/payara/deployments"]
 
+# Download specific
+ARG PAYARA_VERSION="5.192"
+ENV PAYARA_VERSION="$PAYARA_VERSION"
+RUN wget --no-verbose -O ${PAYARA_HOME}/payara-micro.jar http://central.maven.org/maven2/fish/payara/extras/payara-micro/${PAYARA_VERSION}/payara-micro-${PAYARA_VERSION}.jar
 
