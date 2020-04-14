@@ -23,4 +23,4 @@ CMD ["--deploymentDir", "/opt/payara/deployments"]
 # Download specific
 ARG PAYARA_VERSION="5.201"
 ENV PAYARA_VERSION="$PAYARA_VERSION"
-RUN wget --no-verbose -O ${PAYARA_HOME}/payara-micro.jar https://central.maven.org/maven2/fish/payara/extras/payara-micro/${PAYARA_VERSION}/payara-micro-${PAYARA_VERSION}.jar
+RUN wget --no-verbose -O ${PAYARA_HOME}/payara-micro.jar https://repo1.maven.org/maven2/fish/payara/extras/payara-micro/${PAYARA_VERSION}/payara-micro-${PAYARA_VERSION}.jar
