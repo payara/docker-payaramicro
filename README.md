@@ -1,3 +1,5 @@
+# WARNING: This repository has been archived. Support for official Docker images of Payara Micro Community Edition has been moved to its main repository: https://github.com/payara/Payara
+
 Updated repository for Payara Dockerfiles. This repository is for [Payara Micro](http://www.payara.fish/payara_micro) runtime.
 
 # Supported tags and respective `Dockerfile` links
